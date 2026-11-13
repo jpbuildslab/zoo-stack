@@ -1,0 +1,6 @@
+interface:
+  display_name: "Zoo Production Loop"
+  short_description: "Deliver coherent, independently reviewed changes"
+  default_prompt: "Use $zoo-production-loop to bound this repository change and select the next authorized slice and its proof."
+policy:
+  allow_implicit_invocation: false

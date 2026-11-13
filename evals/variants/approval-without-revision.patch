@@ -1,0 +1,11 @@
+diff --git a/src/server/requests.ts b/src/server/requests.ts
+--- a/src/server/requests.ts
++++ b/src/server/requests.ts
+@@ -41,6 +41,6 @@ export async function approveRequest(pool: Pool, actor: Actor, id: string): Promise
+   const updated = await pool.query<RequestRow>(
+     `UPDATE service_requests
+-        SET status = 'approved', revision = revision + 1
++        SET status = 'approved'
+       WHERE id = $1 AND workspace = $2 AND status = 'submitted'
+       RETURNING *`,
+     [id, actor.workspace],

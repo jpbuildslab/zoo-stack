@@ -1,0 +1,6 @@
+interface:
+  display_name: "Zoo UI Craft"
+  short_description: "Extend an existing product's UI and interaction patterns"
+  default_prompt: "Use $zoo-ui-craft to compare this UI with the product's accepted examples and propose changes that preserve its behavior."
+policy:
+  allow_implicit_invocation: false

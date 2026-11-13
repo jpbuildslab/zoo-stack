@@ -1,0 +1,18 @@
+Zoo
+Copyright 2026 JP
+
+Zoo's original methods were informed by PStack and TStack's published approaches to engineering
+workflows, review and handoffs:
+
+PStack: https://github.com/cursor/plugins/tree/main/pstack
+TStack: https://github.com/t3dotgg/tstack
+
+This notice credits those research influences. It does not imply endorsement or affiliation.
+
+The skill packages contain instructions and references. The evaluation source also references tools
+and dependencies including Codex, Node.js, Python, Docker, PostgreSQL, Playwright, React and Vite.
+Those tools and dependencies retain their own licenses and terms. The release does not bundle their
+installed packages, browser binaries, container images or credentials.
+
+Zoo source is provided under the accompanying MIT license. Preserve any applicable third-party
+notices when adding copied or adapted material in a contribution.

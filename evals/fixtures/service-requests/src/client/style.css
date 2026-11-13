@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light;
+  color: #182b2a;
+  background: #f3f7f5;
+  font: 16px/1.5 system-ui, sans-serif;
+}
+
+body { margin: 0; }
+main { width: min(43rem, calc(100% - 2rem)); margin: 2.5rem auto; }
+header { margin-bottom: 1.5rem; }
+h1, h2, p { margin: 0 0 0.4rem; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.7rem); }
+h2 { font-size: 1.1rem; }
+.requests { list-style: none; display: grid; gap: 0.75rem; padding: 0; }
+.requests li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: white;
+  border: 1px solid #bdcfca;
+  border-radius: 0.5rem;
+}
+.status { text-transform: capitalize; }
+button {
+  font: inherit;
+  color: white;
+  background: #24574c;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #24574c;
+  border-radius: 0.35rem;
+  min-height: 44px;
+}
+button:focus-visible { outline: 3px solid #244f9e; outline-offset: 2px; }
+button:disabled { opacity: 0.65; }
+dialog { max-width: calc(100% - 4rem); padding: 1.3rem; border: 1px solid #bdcfca; border-radius: 0.5rem; }
+dialog::backdrop { background: rgb(24 43 42 / 45%); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+[role="alert"] { color: #922a1f; }

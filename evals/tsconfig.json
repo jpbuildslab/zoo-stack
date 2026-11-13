@@ -1,0 +1,10 @@
+{
+  "extends": "./fixtures/service-requests/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ES2024", "DOM"],
+    "typeRoots": ["./fixtures/service-requests/node_modules/@types"],
+    "types": ["node"]
+  },
+  "include": ["assertions", "reference"],
+  "exclude": ["reference/reschedule-page.tsx"]
+}

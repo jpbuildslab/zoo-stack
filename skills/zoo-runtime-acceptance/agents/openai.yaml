@@ -1,0 +1,6 @@
+interface:
+  display_name: "Zoo Runtime Acceptance"
+  short_description: "Verify running behavior and reconcile effects"
+  default_prompt: "Use $zoo-runtime-acceptance to identify the owned runtime and decisive evidence for this authorized verification."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,8 @@
+diff --git a/AGENTS.md b/AGENTS.md
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -3,1 +3,4 @@
+ `notices.ts` owns the text operators see after approvals. Run `node --test notices.test.ts` for notice changes. Read `workflow.md` when planning changes to the approval flow.
++
++- Edit approval notice text directly in `notices.ts` for this release.
++- Freeze approval notice text in `notices.ts` until the release owner confirms the exact wording.

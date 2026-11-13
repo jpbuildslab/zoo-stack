@@ -1,0 +1,6 @@
+interface:
+  display_name: "Zoo API Craft"
+  short_description: "Review API authority, contracts, and mutations"
+  default_prompt: "Use $zoo-api-craft to find this repository's API rules and review the change for authority, contract, mutation integrity, and verification gaps."
+policy:
+  allow_implicit_invocation: false
