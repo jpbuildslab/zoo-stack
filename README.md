@@ -41,6 +41,20 @@ You can also point a chat directly at `skills/zoo/SKILL.md` in your clone withou
 Each package carries its MIT license. The four companion skills are optional. Install the ones you need from the same release and name
 them explicitly when you use them.
 
+For a walkthrough, follow [your first task](docs/first-task.md). For versioned archives and checksum
+verification, see [downloads](docs/downloads.md).
+
+## Requirements
+
+- Codex with local file access. The verified host is Codex CLI and App Server on macOS; see the
+  [tested versions and limits](docs/compatibility.md).
+- Git for the pinned clone and contributor checks. Reading an installed skill needs no Node or Python runtime.
+- Python 3.9+ and Node.js 24+ for repository checks and evaluations.
+- Docker and browser dependencies only for the separate runtime evaluations.
+
+The five skills can be installed separately. Companions don't install or launch other skills for you.
+Keep your model choices in your own session or repository settings.
+
 ## The skills
 
 | Skill | What it helps you do |
@@ -103,14 +117,15 @@ handbook. See the [repository guidance](docs/repository-guidance.md) and [small 
 
 ## What we've checked
 
-This is an alpha. Local checks cover package boundaries, installation and recovery, synthetic
-engineering tasks, and selected browser and database workflows. The current host evidence is from
-Codex CLI and App Server on macOS. The new API and UI companions also went through a source-only
-exercise using two different synthetic product profiles.
+This is an alpha. Local checks cover package boundaries, installation and recovery, and synthetic
+engineering tasks. Earlier core runs exercised browser and PostgreSQL workflows. The new API and UI
+companions went through a source-only exercise using two different synthetic product profiles.
+The current host evidence is from Codex CLI and App Server on macOS.
 
 Failures and limits are kept in the [results](docs/results.md), including cases that needed a repair.
 The [compatibility notes](docs/compatibility.md) distinguish observed behavior from support we haven't
 verified. Independent beta, other hosts and Desktop picker behavior still need evidence.
+The [evaluation guide](evals/README.md) lists the checks you can run and the prerequisites each needs.
 
 Skills guide the agent; they don't enforce its permissions. A planning request stays planning-only.
 Use the host's actual controls for tools, files and services, and authorize implementation separately.

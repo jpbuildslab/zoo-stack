@@ -14,7 +14,8 @@ needs it. Every skill must remain usable outside this checkout with its local li
 
 ## Run the local checks
 
-Use Python 3.9 or newer and Node.js 24 or newer. From the repository root:
+Use a Git clone, Python 3.9 or newer and Node.js 24 or newer. Source archives don't contain `.git`,
+which the package checker and fixture exporter need. From the cloned repository root:
 
 ```sh
 python3 evals/check-static.py

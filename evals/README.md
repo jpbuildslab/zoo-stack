@@ -1,5 +1,9 @@
 # Check the fixtures
 
+Use a Git clone for these repository checks. Release source archives don't contain `.git`, which
+the package checker, fixture exporter and mounted browser control use. The archives remain suitable
+for inspecting source and installing whole skill directories.
+
 Run `python3 evals/check-static.py` and `python3 evals/test_package_checks.py` for package frontmatter and companion invocation policy,
 contained inline Markdown references and known broken package controls. These checks include pending new Markdown
 files; they do not execute product fixtures or prove model behavior. Use `check-local-skill.py` with
@@ -35,7 +39,7 @@ These commands execute source from the named export. Use them on the known local
 
 ## Separate local execution
 
-The [local Codex runner](run-local-demo.py) preflights an exact CLI command profile before invoking a model. Omit `--prompt` for preflight only. It checks fixture and skill access, denies a sibling canary and a symlink to it, and tests live TCP, Unix socket, and process signal denial. Pass `--matched-catalog` for a matched comparison to disable ambient skill entries after rendering a local prompt preview. The CLI handles model authentication outside the shell profile. These observations apply to the CLI lane and its tested paths.
+The macOS-specific [local Codex runner](run-local-demo.py) preflights an exact CLI command profile before invoking a model. Omit `--prompt` for preflight only. It checks fixture and skill access, denies a sibling canary and a symlink to it, and tests live TCP, Unix socket, and process signal denial. Pass `--matched-catalog` for a matched comparison to disable ambient skill entries after rendering a local prompt preview. The CLI handles model authentication outside the shell profile. These observations apply to the CLI lane and its tested paths.
 
 Use the [isolated service runner](run-isolated-service.py) for sealed service output. Build its local tool image from the [pinned Playwright base and fixture lockfiles](isolated/Dockerfile), using a disposable build context containing only those two package files. Pass the resulting exact image ID and the nominated local Docker context and Unix endpoint. The runtime uses separate app, PostgreSQL, and observer containers. The app and observer share only the owned PostgreSQL loopback namespace. The app receives its own database role and a read-only copy of its source, with no Docker socket or evaluator mounts. The observer controls browser fault delivery and checks PostgreSQL directly.
 

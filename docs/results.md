@@ -5,6 +5,12 @@ alpha snapshot; earlier development history and raw private transcripts are not 
 The synthetic fixtures and checkers are included so you can run their current checks yourself. The
 observations below are not a controlled comparison with other skill packs or an independent beta.
 
+Before publication, the mounted browser control was changed to export the fixture from the current
+public checkout's committed HEAD instead of a private development commit. In a fresh-history checkout,
+that export, the reference typecheck and the reference frontend build passed with existing dependencies.
+The browser and PostgreSQL control was not rerun there because Docker and the matching browser binary
+were unavailable. The earlier mounted observations below remain historical core evidence.
+
 ## Portable suite candidate
 
 The five-skill candidate added four optional companions and an entrypoint composition note.
