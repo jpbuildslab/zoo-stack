@@ -14,6 +14,8 @@ Use a fresh export of the [request notices fixture](../fixtures/first-tasks/READ
 
 ## Additional cases
 
+See [focused craft cases](craft.md) for the matched onboarding and craft batch.
+
 | Case | Evidence to prepare before execution |
 | --- | --- |
 | Z01b Conflicting guidance | Apply the [guidance overlay and request](handoffs.md). |

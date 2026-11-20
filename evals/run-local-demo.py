@@ -129,11 +129,18 @@ def main():
     parser.add_argument("--node-runtime", action="store_true")
     parser.add_argument("--allow-red-test", action="store_true")
     parser.add_argument("--matched-catalog", action="store_true")
+    parser.add_argument("--image", type=Path, action="append", default=[], help="Attach a nominated local PNG")
     parser.add_argument("--prompt", type=Path, help="Submit one invocation; without this flag only preflight")
     args = parser.parse_args()
     project = args.project.resolve(strict=True)
     evidence = args.evidence.resolve()
     skill = args.skill.resolve(strict=True) if args.skill else None
+    images = [path.resolve(strict=True) for path in args.image]
+    if images and not args.prompt:
+        parser.error("--image requires a prompt")
+    for image in images:
+        if image.suffix.lower() != ".png" or not image.is_file():
+            parser.error("attach only nominated local PNG files")
     if project.is_relative_to(Path(__file__).resolve().parents[1]):
         parser.error("run the demo in a disposable export outside the source checkout")
     if evidence.is_relative_to(project) or (skill and skill.is_relative_to(project)):
@@ -188,9 +195,10 @@ def main():
     else:
         catalog = ["--enable", "skip_host_skill_discovery"]
     env = {key: value for key, value in os.environ.items() if key not in {"OPENAI_API_KEY", "OPENAI_BASE_URL"}}
+    attachments = [argument for image in images for argument in ("--image", str(image))]
     command = [codex, "exec", "--ignore-user-config", "--ignore-rules", "--ephemeral", "--json",
                "--skip-git-repo-check", "-C", str(project), "-m", "gpt-6.1-sol",
-               *profile, *settings, *features, *catalog, "-"]
+               *profile, *settings, *features, *catalog, *attachments, "--", "-"]
     (evidence / "invocation.json").write_text(json.dumps(command, indent=2) + "\n")
     with (evidence / "events.jsonl").open("xb") as events, (evidence / "diagnostics.txt").open("xb") as diagnostics:
         result = subprocess.run(command, input=args.prompt.read_bytes(), stdout=events, stderr=diagnostics,

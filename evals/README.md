@@ -48,3 +48,69 @@ Each new runtime manifest records the exact candidate files and digest, committe
 The [reference controls](reference/rescheduling.ts) remain evaluator-side. Keep them, case mappings, and model logs outside candidate access. Record the effective limits of the host and any action that fell outside the requested scope.
 
 The [repository check](../.github/workflows/check.yml) runs the entrypoint, local links, and dependency-free fixture checks. PostgreSQL, browser, and model evaluation remain separate.
+
+## Focused craft cases
+
+Follow the [task contracts](cases/craft.md). Export `api-boundaries` for the standalone dispatch
+case and run `node evals/assertions/check-api-boundaries.ts /path/to/export` from the evaluator
+checkout. Keep assertions and corrected controls outside candidate access.
+
+For service requests, add `--baseline --ui-craft reference` to the isolated observer command
+to capture the synthetic queue and reading references. Use `--baseline --ui-craft queue` for the
+live queue task or `--baseline --ui-craft reading` for the editorial task. Only the observer gets
+the capture directory. Source, dependency and checker identities are recorded in the run manifest.
+Use `--baseline --ui-craft queue-recovery` to check a recovery repair after a failed status read
+or a committed approval with a lost response. The unchanged starting fixture is the comparison
+input. Keep the first-pass result and the follow-up observer result under their respective checker
+commits.
+
+For the visual-direction and reading-transfer trials, the local Codex runner accepts repeatable
+`--image /path/to/nominated.png` with `--prompt`. Attach only the specific rendered reference and
+target images the task needs. Image attachments enter the model prompt while the shell retains
+its existing scoped profile. Record the image digests and a specific observation that informed
+the implementation. The evaluator's raw artifacts and grading stay outside the shell scope.
+
+For an artifact implementing the scoped worklist correction, use `--baseline --ui-craft
+queue-direction`. This lane checks scope and search together, the view’s keyboard and forced-color
+states, finding an approved record after a view change, server-side role and workspace checks,
+and recovery before and after commit. The ordinary fixture remains the starting point for the
+earlier comparisons.
+
+Use `--baseline --ui-craft queue-finish` with the refined worklist artifact to also verify row
+rhythm, mobile metadata placement, loaded Inter, hit areas and row-action states. This lane
+keeps the scoped approval and recovery assertions.
+
+Use `--baseline --ui-craft queue-workflow` with the separately derived
+[rich request fixture](cases/rich-request-workflow.md). The runner checks the fixture's schema
+and seed against the committed evaluator inputs. The observer checks bounded queues, detail and
+navigation, reviewed revisions, and recovery across reload against the same owned database. Use
+`--baseline --ui-craft queue-workflow-transfer` on the read-only Approved view derivative. This
+lane checks the original receipt and view state after Back and reload. Keep the starting fixture,
+candidate source, and each variant's result distinct.
+
+For the composed desk derivative, include the committed
+[`composed-workflow-content.sql`](isolated/composed-workflow-content.sql) as
+`runner/composed-content.sql` in the export. Use `queue-workflow-composed` and
+`queue-workflow-composed-transfer` for the full workflow and Approved view respectively. The
+content changes titles and purposes while retaining the same request IDs, timestamps, and
+approval conditions. The runner verifies the content bytes alongside the schema and seed.
+
+For the Cedar calendar derivative, add `--cedar-calendar` to a composed workflow lane. Build
+its tool image from the existing Dockerfile and the [Cedar-only manifests](isolated/cedar-calendar/README.md).
+The runner verifies both the candidate and image dependency inputs. Historical lanes still use
+their original manifests.
+
+For a Cedar reference that preserves the applied filters on Return from a selected request,
+also pass `--cedar-filter-return` with `queue-workflow-composed`. This case opens a record,
+applies an end date, and checks the resulting queue, focus, and Back entry. A pre-fix artifact
+can serve as the control when it reaches the named Return assertion.
+
+Add `--cedar-review-layout` alongside `--cedar-filter-return` to check the compact review
+layout. It captures short and long requests at the same 1280 × 640 viewport, checks the
+review action and independent detail scrolling, and checks that Apply remains visible at
+320 × 620. The date dialog and the queue's sort control are exercised separately.
+
+Add `--cedar-distant-navigation` to the compact review lane to open a row after scrolling.
+The observer checks the visible detail heading and Return control, then verifies the original
+row, focus and applied filter URL after Return or browser Back. The capture set includes both
+sides of the split breakpoint, a short desktop window and the phone path.
