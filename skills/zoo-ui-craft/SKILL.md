@@ -5,7 +5,7 @@ description: Plan, design, implement, or review substantial UI changes in an exi
 
 # Zoo UI Craft
 
-Extend the product's visual language while preserving the target's task, behavior, and recovery.
+Develop the target's visual direction within the product's task, behavior, and recovery contracts.
 Match the deliverable to the request. Plans and reviews can use source and preview evidence without
 changing product code. Implementation and runtime actions follow the authority granted for the task.
 
@@ -22,17 +22,24 @@ reference, the presentation decisions to carry forward, the target-specific beha
 or widths that could change the decision. Use the repository's existing formats when they serve that
 purpose.
 
-Apply the latest accepted direction to the specific dimensions it changed. Keep the target's own
-behavior and data contracts. When the user asks for a different direction, explore it within the
-requested scope and present it as a candidate until accepted. When missing or conflicting evidence
-would force a consequential choice, identify that choice and continue with unaffected work.
+Use accepted references for the dimensions they govern. Treat the current implementation as evidence
+of existing behavior and presentation. Establish which choices have actually been accepted. For a
+substantial visual change, establish a direction with representative content and states before
+applying it to the working flow. Do this when new capabilities change the hierarchy, navigation,
+or working surfaces, even if the visual vocabulary is already accepted. Resolve the composition
+of the affected family before extending individual treatments. Keep a small fix within its
+requested surface. Inspect rendered images when making visual judgments. If you cannot view them,
+leave visual fit pending.
 
 ## Visible Copy
 
-Keep visible copy that helps the user understand a meaningful state, choose an action, or anticipate
-its consequence. Remove redundant explanations and translate implementation terms into the user's
-language. Preserve accessible names, necessary instructions, actionable blockers, and clear
-disclosure when the outcome is uncertain.
+Start with precise labels and actions. Read the whole rendered state, including its title, controls,
+values, notices, and available actions, then test whether removing a supporting line costs the user
+information needed to choose, anticipate a consequence, or recover. Remove the line when the same
+informed choice and recovery remain clear. Put a non-obvious consequence at the decision it informs
+and translate implementation terms into the user's language. Preserve accessible names, input formats,
+scope and timing, actionable blockers, and clear disclosure when the outcome is uncertain. Check the
+copy at its working size, including long titles and status or date labels viewed out of context.
 
 ## Choose the Relevant Reference
 

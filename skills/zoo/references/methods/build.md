@@ -4,6 +4,8 @@ Start from the requested behavior, current source, and the work the repository a
 
 For a routine fix, read the owning file and the nearest relevant check. Make the scoped edit and run that check. Add further planning or review when a repository requirement, a user request, or a material risk calls for it.
 
+When introducing or reshaping an interface, shared component, or state owner, start with a real caller. Give each invariant and piece of authoritative state a clear owner. Shape data so invalid combinations are hard to represent. Keep an abstraction when it reduces what callers must know or localizes a demonstrated change. Verify the behavior through the interface the caller uses.
+
 For a change that spans several layers, trace the caller through the affected owner before editing. Preserve existing callers, data, and authority where the request leaves them in place. For mutations, check who can act, which resource the effect applies to, what can change between review and confirmation, and how a caller can recover when the result is uncertain. Use the existing storage and state boundaries when they support the required behavior.
 
 Use [verification selection](verify.md) when proof depends on a runtime, persistent effect, or several consumers. Check the normal entry point and the most consequential rejection or recovery case. Keep an unmet proof requirement visible when access or tooling is missing.

@@ -31,8 +31,15 @@ Each named file should report `OK`. On systems with GNU coreutils, use `sha256su
 If a name, size or digest differs, stop and check the selected release and download before installing.
 The checksums describe these named assets, not GitHub's automatically generated source downloads.
 
-Extract into an unused directory. Each extracted `skills/<name>` folder is already a staged package;
-start at step 2 of the [installation guide](local-skill.md) to check its destination, preserve existing
-copies and confirm discovery in a fresh session. Keep each skill's license with it.
+From the download directory, extract the suite into a new directory.
+
+```sh
+mkdir zoo-extracted &&
+tar -xzf zoo-suite-v0.1.0-alpha.1.tar.gz -C zoo-extracted
+```
+
+Use the extracted `zoo-extracted/zoo-suite-v0.1.0-alpha.1` directory as the source in the
+[archive install instructions](local-skill.md#install-from-an-existing-clone-or-archive). Run the
+copy commands from your project root. Keep each skill's license with it.
 The suite doesn't include your product's API rules, visual references or runtime settings; those stay
 in your own repository.

@@ -15,4 +15,5 @@
 ## Contracts and disclosure
 
 - Identify the contract owner and material consumers. Check stable identifiers, field and error semantics, nullability, and pagination for changes consumers can observe. Where consumers migrate independently, check replacement parity and evidence for retirement. Report external usage as uncertain when the available evidence covers only repository callers.
+- At each actual trust boundary, identify who decodes and validates received data at runtime, including external responses. A success status or type assertion cannot establish that a payload is valid. Preserve confirmed data and distinguish invalid data, a definitive rejection, and an uncertain effect. Avoid treating a malformed payload as an empty result or proof that nothing happened.
 - Project only the data required by the contract. In responses, errors, and logs, check for credentials, provider internals, sensitive fields, and raw request content. Preserve enough correlation to diagnose or reconcile the operation, with outcome claims supported by the available evidence.

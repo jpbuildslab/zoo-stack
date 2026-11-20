@@ -2,6 +2,11 @@
 
 Zoo's portable workflow lives in [one skill directory](../skills/zoo/SKILL.md). The host determines what can be loaded, which tools can run, and which files and services those tools can reach.
 
+In the CLI, check which project-local path the catalog offers before selecting a skill. An
+App Server catalog rehearsal checks discovery and lifecycle mechanics. A task that reads the
+selected entrypoint supplies loading evidence for that invocation. Desktop picker discovery and
+attachment need their own observation.
+
 The alpha suite has four optional companion directories. The historical table below
 describes the core package; do not assume it covers the companions or a different installation.
 Each package is independently self-contained. Before the alpha, fresh local CLI App Server rehearsals
@@ -16,6 +21,11 @@ picker, cross-host or provider observation is claimed for the suite.
 | Local CLI App Server with project-local skills | Repository discovery, structured skill selection, and reads of the installed Zoo entrypoint. Earlier core checks covered installation, collisions, interrupted update, rollback and removal. |
 | Codex Desktop direct file references | An earlier bootstrap entrypoint, linked reference and sample were read. A fresh chat read the sample from a checkpoint. That observed Desktop session reported unrestricted filesystem access. This does not establish full-suite Desktop behavior. |
 | Codex Desktop picker | Pending explicit discovery and attachment evidence. |
+
+The [craft follow-up](results.md#craft-and-onboarding-follow-up) repeated project-local catalog
+checks for the changed core, API, and UI packages on `0.167.0-alpha.4.1`. Matched CLI trials
+observed direct entrypoint reads and explicit composition. The owned browser observer exercised the
+synthetic queue independently of the CLI. Desktop picker attachment remains open.
 
 Historical core CLI and App Server observations used Codex `0.167.0-alpha.3.2` on macOS. The new suite
 catalog rehearsals used `0.167.0-alpha.4.1`. Run [the staging checks](local-skill.md) when the host or
