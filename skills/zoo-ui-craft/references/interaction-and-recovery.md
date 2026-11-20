@@ -7,6 +7,14 @@ eligibility, record identity, and recovery with the existing owners. Presentatio
 relevant state and invoke the existing command. Apply review or confirmation where the product
 requires it.
 
+When changing who owns a view state, derive display values from that owner when possible. Check that
+selection, review identity, and confirmed results stay consistent when sibling components or responsive
+layouts render the same work.
+
+When navigation changes, establish which region scrolls and what preserves the working context.
+Trace selection, focus and return across opening a record, closing it, and continuing from a result.
+Check the applicable Back and reload paths and what happens when the original row or control disappears.
+
 Trace the relevant journey through entry, validation, pending, result, and any follow-on action,
 including return, cancellation, or recovery paths that apply. Follow the accepted navigation and
 surface conventions when the user needs to continue or correct something.

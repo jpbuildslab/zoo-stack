@@ -11,6 +11,143 @@ that export, the reference typecheck and the reference frontend build passed wit
 The browser and PostgreSQL control was not rerun there because Docker and the matching browser binary
 were unavailable. The earlier mounted observations below remain historical core evidence.
 
+## Candidate first-install check
+
+The candidate skills and checkers were exercised from a clean checkout at
+`284ffe5507d8931714ed1d8f5e027138ee0a616d`. The later documentation and image changes add this report and
+selected synthetic images; they do not change the tested packages, fixtures or checkers.
+
+The README's literal clone and core-copy commands installed the published `v0.1.0-alpha.1`.
+Its named release assets passed SHA-256 verification. A fresh CLI source-only question traced
+an example save function, identified the absent persistence implementation and left files unchanged.
+
+A separate disposable project installed the exact candidate core, then the UI companion. Fresh
+App Server catalogs found the core alone and then both project-local packages. Whole-package
+manifests matched the candidate checkout. The core entrypoint is unchanged from the alpha, but its
+build/review references differ; checking the entrypoint alone would not identify the installed version.
+The UI trial explicitly selected both names and read the installed UI references. This checks CLI
+use and project-local discovery, not Desktop picker attachment.
+
+### Cedar equipment example
+
+One fresh CLI task received an unfamiliar equipment-release page, a supplied design reference,
+four repeated helper lines and a blocked release action. The first model pass changed only the
+HTML and CSS. It removed all four repeated lines while retaining uncertainty, the status-read
+instruction, the disabled release action, equipment facts and the original receipt identity.
+It made Check status the prominent action and used the reference's typography, dividers and
+left-aligned values. The script, reference and installed packages stayed unchanged.
+
+The evaluator inspected the rendered first pass at 1280 and 390 CSS pixels. Neither width overflowed.
+Reading the saved result kept the release blocked, returned the same receipt, recorded one status
+read and recorded zero writes in the client-side fixture. This is simulated UI behavior, not a
+persisted release or a live provider result. No model repair was supplied after the first pass.
+
+Before, at a 1280 × 760 viewport (full-page capture):
+
+![Synthetic Cedar equipment screen before the copy task](examples/cedar-copy-before.png)
+
+After, at the same viewport (full-page capture):
+
+![Synthetic Cedar equipment screen after the first model pass](examples/cedar-copy-after.png)
+
+**Limits and misses.** The implementer could not render its after-state within the scoped profile
+and left browser verification pending; the evaluator rendered that exact output separately.
+It also searched host application/tool metadata while looking for a browser. File canaries,
+network, sockets and process signals were denied by the preflight, but that metadata observation
+limits strict-isolation claims. A CLI launch-alias issue was resolved in the evaluation harness
+before model execution by using the nominated executable's canonical path. The first-pass output
+was not altered to obtain the illustrated result. Native devices, screen-reader speech and actual
+browser zoom were not checked.
+
+### Local evaluation and hosted coverage
+
+| Check | Observed locally |
+| --- | --- |
+| Package checks | Five packages, eight negative package controls and nine dependency-free tests passed. |
+| Dispatch API task | The starting control failed four of five independent assertions; a known corrected control and the fresh model output passed all five. |
+| Mounted Cedar desk | Chromium and owned PostgreSQL passed the full workflow, UTC calendar, compact review, Return and distant-row navigation. The read-only Approved lane also passed. |
+| Unresolved-approval control | The observer rejected the seeded regression at `reload-no-resubmit: new review is blocked`. |
+
+The mounted Cedar application was a retained synthetic artifact. Its generated source and raw
+run evidence remain outside this repository. These observations do not establish that an arbitrary
+new application will pass, or that the published alpha includes the candidate guidance.
+
+The CLI was `0.169.1` on macOS with local Node `24.15.0`. Browser checks used the pinned Playwright
+`1.65.0` image (Node `26.13.0`) and PostgreSQL image specified by the runner. Requested settings
+and observed tool events are not independent backend-model telemetry.
+
+[GitHub CI](../.github/workflows/check.yml) runs package metadata/link checks, the package controls
+and the dependency-free fixture tests. It does not run the CLI/model, browser or PostgreSQL trials
+reported here. Native picker acceptance, broader adoption and an independent beta remain open.
+
+## Craft and onboarding trials
+
+The following observations come from maintainer-run synthetic projects. They describe the tasks
+and versions exercised during development, not a controlled advantage over another skill pack.
+Raw model transcripts, private development history and generated artifacts are kept outside this
+repository. See [the craft cases](../evals/cases/craft.md) for the task contracts and
+[local execution](../evals/README.md#separate-local-execution) for the host boundaries.
+
+### Queue and reading trials
+
+Both the published and revised core/UI packages produced queues that built and completed a scoped
+approval in an owned PostgreSQL fixture. Observers checked title search, clearing, long records,
+workspace and role restrictions, keyboard actions and desktop/phone layouts. A reading transfer
+preserved its supplied headings and prose. These samples do not establish general visual quality,
+a speed advantage, accessibility certification or use in a production application.
+
+The first queue passes left an approval available after a generic network error. Follow-up repairs
+required a status read for the original operation before another approval and kept approval blocked
+when that read failed. Withholding the response after commit recovered one approval and one receipt.
+The regression control failed at the intended repeat-approval assertion. These were synthetic
+browser/database observations, with intercepted failures; live providers and native devices were
+outside the run.
+
+### Rich and composed Cedar desk
+
+The richer Cedar fixture added bounded queues, filtering, selected-request details, review and a
+read-only Approved view. Browser and PostgreSQL checks covered stale review, reload, Back, exact
+receipt identity, separate Cedar/Birch counts and recovery of a committed response. Subsequent UTC
+calendar checks covered draft versus applied dates, inclusive end dates in two browser timezones,
+filter history and an unresolved journal entry surviving date changes.
+
+The maintainer reviewed successive desktop and phone candidates after several revisions. An early
+cascade rendered row titles at the wrong weight, and a recovery observer initially relied on an
+exact heading rather than the actionable alert. Corrected source and locators passed their focused
+checks. The reviewed captures support those synthetic states only. They do not establish native
+keyboard behavior, screen-reader speech, actual browser zoom or suitability for a receiving product.
+
+### Cedar foundation and transfer
+
+The synthetic Cedar reference reused the request/calendar contract and extracted shared
+presentation for real worklist and review callers. Offline previews simulate outcomes; mounted
+checks use the fixture service, schema and approval journal. A Return regression reopened an old
+detail and lost newly applied dates. The corrected artifact retained the applied filter, row focus
+and a usable Back entry. Compact-layout checks also caught excessive short-detail spacing before
+correction and exercised a scrollable long detail and a date dialog at 320 CSS pixels.
+
+A fresh decision-history transfer used the supplied foundation without changing it. Its first pass
+built and typechecked. Browser checks exercised same-title records, UTC boundaries, draft/applied
+dates, older approvals, unknown/foreign IDs, Back, reload and focus return. A phone locator first
+matched a hidden list byline; scoping it to the visible detail passed on the unchanged artifact.
+This was one client-side synthetic transfer, not persisted production data or independent adoption.
+
+### Independent task and API boundary
+
+Two fresh operating-hours prototypes received the same schedule inputs. Both preserved failed
+saves, explicit retry, reload and discard. The revised prototype kept the next Tab inside the page
+after phone discard; the baseline reached the browser boundary first. The maintainer slightly
+preferred the revised prototype's usefulness. The calls inspected temporary-directory metadata,
+which limits any claim of strict isolation. Neither result was repaired before comparison.
+
+The dispatch task checked matching acknowledgements, malformed bodies, definite rejection,
+uncertain transport results and receipt retention through the exact 72-hour cutoff. Both package
+conditions passed the five independent assertions after scoped implementation fixes. These are
+pure synthetic transport/storage-boundary checks, not proof of a live dispatch provider.
+
+Historical captures used owned Chromium and touch emulation. Broader model performance, automatic
+skill selection, other hosts, live-provider behavior and independent beta remain unverified.
+
 ## Portable suite candidate
 
 The five-skill candidate added four optional companions and an entrypoint composition note.

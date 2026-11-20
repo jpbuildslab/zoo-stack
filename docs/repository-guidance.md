@@ -12,7 +12,7 @@ Start from the assigned repository's instructions. Link the existing owners of t
 | Current scope | Instructions, current plans, source ownership and allowed effects |
 | API behavior | Exposure, actor/resource authority, schemas, data-access conventions and exceptions |
 | UI behavior | Controller, role/capability states, action/recovery contracts and destinations |
-| Presentation | Live tokens/components, accepted family examples and current owner direction |
+| Presentation | Live tokens/components, user-facing meaning of domain data, accepted workflows and current owner direction |
 | Verification | Commands, substitutions, runtime resources and decisive assertions |
 | Acceptance | Tested behavior, accepted visual decisions and unresolved questions |
 
@@ -30,6 +30,10 @@ A useful reference identifies the operator/task, production component and token 
 synthetic states, responsive behavior, interaction checks and the exact dimension accepted by its
 owner. Existing components and experimental samples are evidence to inspect, not automatic design
 approval. Current owner direction can request a new candidate.
+
+For workflows with several surfaces, record accepted examples of how users move among them and
+what context carries forward. The repository owns display names, decision inputs, and which
+technical evidence operators need to see.
 
 Use production presentation components with synthetic inputs where practical. Keep mocked services
 and omitted behavior visible in the example's scope. Avoid copying a controller into a gallery or

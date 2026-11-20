@@ -2,6 +2,7 @@ import { StrictMode, useEffect, useRef, useState } from "react"
 import { createRoot } from "react-dom/client"
 import type { RequestList, ServiceRequest } from "../contract.ts"
 import "./style.css"
+import { QueueReference, ReadingReference } from "./reference.tsx"
 
 function scheduledTime(iso: string): string {
   return new Intl.DateTimeFormat("en-US", {
@@ -112,4 +113,8 @@ function RequestDesk() {
 
 const root = document.getElementById("root")
 if (!root) throw new Error("The request desk root is missing")
-createRoot(root).render(<StrictMode><RequestDesk /></StrictMode>)
+const preview = new URLSearchParams(window.location.search).get("preview")
+const view = preview === "queue" ? <QueueReference />
+  : preview === "reading" ? <ReadingReference />
+  : <RequestDesk />
+createRoot(root).render(<StrictMode>{view}</StrictMode>)

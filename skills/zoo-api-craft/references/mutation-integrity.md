@@ -9,6 +9,7 @@
 ## Replay and concurrency
 
 - For a retriable mutation, establish a stable operation key or natural identity, its scope, and the durable boundary that arbitrates simultaneous attempts. Verify what happens if the same identity is submitted with different inputs. Check the caller's authority to access the original result on replay.
+- Check how long operation keys and results remain available for supported retries or redelivery, and what reuse or expiry means for the caller. Pending or uncertain attempts must remain reconcilable when ordinary retention expires. Verify expiry cannot turn a supported retry into a fresh effect.
 - Trace interruption around commit, external acceptance, and result recording when those points exist. Check which component can establish that an attempt did or did not take effect. Retain the operation identity across transport retries and reconcile uncertain attempts before deciding whether to repeat them.
 
 ## Caller recovery

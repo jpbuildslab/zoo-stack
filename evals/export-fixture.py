@@ -12,7 +12,7 @@ import subprocess
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("commit", help="Full Git commit ID")
-    parser.add_argument("fixture", choices=("first-tasks", "service-requests", "preferences-cli"))
+    parser.add_argument("fixture", choices=("first-tasks", "service-requests", "preferences-cli", "api-boundaries"))
     parser.add_argument("destination", type=Path)
     args = parser.parse_args()
 

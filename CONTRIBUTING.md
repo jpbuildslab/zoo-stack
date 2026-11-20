@@ -28,6 +28,14 @@ relevant case in [the evaluation guide](evals/README.md). Record the exact candi
 results, substitutions and checks you couldn't run. Keep a failed result when a later correction
 passes. Don't rerun unrelated work just to produce a larger test count.
 
+## Write commits
+
+Commit one coherent change at a time. Use `type(scope): subject`, with an optional scope. Write a
+concrete subject in the imperative, such as `docs: clarify installation and the first task` or
+`fix(api-craft): check received data and retry retention`. Use `feat` or `fix` when changing skill
+behavior. Add a short body when the reason or the checks would help a maintainer. Mention only
+checks you ran.
+
 ## Open an issue or pull request
 
 Use [Issues](https://github.com/jpbuildslab/zoo-stack/issues) for ordinary bugs, documentation gaps or

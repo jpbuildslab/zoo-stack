@@ -5,8 +5,9 @@ you can name. You don't need to give the agent every skill or an elaborate proce
 
 ## Read the current behavior
 
-After [installing Zoo](local-skill.md), open a fresh chat in that project. Replace the example with
-your actual entrypoint:
+After [installing Zoo](local-skill.md), open a fresh CLI session in your project and select `zoo`
+from the `$` selector. You can also [point Codex at the file directly](local-skill.md#use-a-skill-without-installing-it).
+Replace the example with your actual entrypoint.
 
 ```text
 $zoo Trace what happens when this form saves a record. Read the owning code and

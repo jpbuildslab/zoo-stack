@@ -1,0 +1,24 @@
+.reference-queue .requests li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 6rem 8rem;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  padding-block: 0.7rem;
+}
+
+.reference-queue h2 { margin: 0; overflow-wrap: anywhere; }
+.reference-queue time { color: #38544d; }
+.reference-caption { color: #38544d; font-size: 0.875rem; }
+
+.reference-reading article {
+  max-width: 60ch;
+  margin-inline: auto;
+  line-height: 1.7;
+}
+
+.reference-reading article h2 { margin-top: 1.6rem; font-size: 1.25rem; }
+
+@media (max-width: 37rem) {
+  .reference-queue .requests li { grid-template-columns: 6rem minmax(0, 1fr); }
+  .reference-queue h2 { grid-column: 1 / -1; }
+}

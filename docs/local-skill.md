@@ -1,29 +1,115 @@
-# Stage a pinned Zoo skill locally
+# Install Zoo in a project
 
-Use a disposable Git project and an exact commit of the Zoo repository. Codex's project-local catalog reads `.agents/skills/`. Each whole directory under `skills/` is a separate package, including its references, metadata and license. Copy the whole directory so its license stays with it. Install only the selected methods. [Codex skill discovery](https://learn.chatgpt.com/docs/build-skills#where-to-save-skills)
+Copy the whole skill directory into `.agents/skills/` in the project where you'll use it. Keep the
+entrypoint, references, metadata where present, and license together. The verified catalog path is
+Codex CLI and App Server on macOS. See [host compatibility](compatibility.md) for observed coverage.
 
-1. Export `skills/<selected-name>` from the selected commit with `git archive`. Extract it to staging outside the project's catalog. Verify its file list, matching discovery name, metadata and contained references. Keep a digest and the source commit. For the general entrypoint, the selected name is `zoo`.
-2. Check `.agents/skills/<selected-name>` and the catalog from the intended working directory. If the destination exists or the name is already offered elsewhere, resolve ownership before activation. Do not overwrite a product's existing companion skill just because the names match.
-3. Move the validated directory into `.agents/skills/`. Use a fresh catalog view to confirm the offered path. For a behavioral loading check, record explicit selection and the observed entrypoint read in that host. Companion metadata disables implicit invocation; explicitly name each selected method or follow the repository's explicit routing.
+## First installation
 
-For multiple packages, validate every destination before activating any and keep an installation
-receipt outside the catalog. Do not leave a partial installation presented as a complete suite.
-The receiving repository keeps its own product definitions; see [the guidance interface](repository-guidance.md).
+The [README quickstart](../README.md#get-started) starts in your project's root and clones the pinned
+release alongside it. If you already have the release, follow the copy steps below.
 
-## Update or recover
+## Install from an existing clone or archive
 
-Stage and verify the new copy. Let any task using the installed skill finish, or pause it and retain its handoff, before moving the installed directory. During the switch, keep the previous copy outside the catalog and record where it went. Activate the staged directory at the same path and verify the path and digest in a fresh task or catalog. Resume paused work in a fresh task so it loads the selected package.
+For a clone, check the selected source before copying. `git -C /path/to/zoo-stack rev-parse HEAD`
+reports the current commit, and `git -C /path/to/zoo-stack status --short` shows local changes. Use a
+clean copy of the release or commit you intend to install.
 
-If interrupted before activation, restore the known prior directory to the empty destination. To roll back an activated update, finish or pause any task using that version before restoring the saved copy. After either recovery, verify the restored path and digest in a fresh task or catalog. Keep only one intended copy of each selected skill visible from the project. Remove the exact owned project-local directory to uninstall, then check that a fresh catalog no longer lists it there.
+For an archive, [verify and extract the suite](downloads.md#use-archives-for-inspection-or-installation).
+The extracted directory containing `skills/` is the source. The archive copy and direct-file route
+work without Git metadata.
 
-The local CLI checks cover catalog mechanics. Swapping the package inside an active task remains unverified. Model loading and Desktop picker attachment each require their own observation.
+From your project root, set `zoo_source` to the clone root or the extracted directory containing
+`skills/`. Replace the example path before running this block.
 
-The [disposable catalog check](../evals/check-local-skill.py) exercises one selected package:
+```sh
+zoo_source="/path/to/zoo-stack"
+zoo_skill="zoo"
+test -f "$zoo_source/skills/$zoo_skill/SKILL.md" &&
+test ! -L .agents &&
+test ! -L .agents/skills &&
+mkdir -p .agents/skills &&
+test ! -e ".agents/skills/$zoo_skill" &&
+test ! -L ".agents/skills/$zoo_skill" &&
+cp -R "$zoo_source/skills/$zoo_skill" ".agents/skills/$zoo_skill"
+```
+
+The guards refuse an existing destination and linked parent directories. Inspect the destination if
+the copy stops. Use the [update procedure](#stage-and-update-an-owned-installation) when replacing a
+package you own.
+
+Open a fresh Codex CLI session from your project root. Use `$` to select the skill. Check the path
+when the host shows it. If the catalog offers two entries with the same name, identify the intended
+copy before proceeding. Follow [your first task](first-task.md) for a source-only example.
+
+## Add a companion
+
+Use the copy block above with `zoo_skill` set to one of these package names. Use the same reviewed
+release when combining methods.
+
+| Set `zoo_skill` to | Whole source directory | Project destination |
+| --- | --- | --- |
+| `zoo-production-loop` | `skills/zoo-production-loop` | `.agents/skills/zoo-production-loop` |
+| `zoo-api-craft` | `skills/zoo-api-craft` | `.agents/skills/zoo-api-craft` |
+| `zoo-ui-craft` | `skills/zoo-ui-craft` | `.agents/skills/zoo-ui-craft` |
+| `zoo-runtime-acceptance` | `skills/zoo-runtime-acceptance` | `.agents/skills/zoo-runtime-acceptance` |
+
+If adding several packages, check every destination before starting. Open a fresh session and select
+each method you want to use explicitly. You can use a companion by itself or combine it with the
+core in one workflow. The receiving repo defines the product and its checks.
+
+## Use a skill without installing it
+
+From a chat in your project, ask Codex to read the full path to `skills/zoo/SKILL.md` in the clone or
+extracted suite. Keep the whole source package accessible so Codex can follow its references. Name
+the task and scope in the same request. Evidence for this route is the observed file read. Installed
+catalog discovery and picker attachment each require their own check.
+
+## Record what you installed
+
+Keep an installation receipt in your existing project tooling notes, outside `.agents/skills/`.
+Record the release or full source commit, package name, destination, and package identity. Use the
+package file list and digests from the release manifest or the [local check](#rehearse-the-lifecycle).
+Copied packages have no intrinsic version field. If you adapt a package locally, record the
+adaptation and preserve it before replacement.
+
+## Stage and update an owned installation
+
+For maintainer work, stage the whole package from an exact commit outside the project's catalog.
+From a Zoo clone, set `zoo_commit` to the full commit ID and `zoo_skill` to the package name. Set
+`zoo_stage` to a new directory on the same filesystem as the installation so the validated package
+can be moved into place.
+
+```sh
+git archive --output="$zoo_stage/package.tar" "$zoo_commit" "skills/$zoo_skill" &&
+tar -xf "$zoo_stage/package.tar" -C "$zoo_stage"
+```
+
+Compare the staged file list and digests with the exact commit. Check the discovery name, metadata,
+contained references, and license. Check the destination and fresh catalog for ownership and name
+collisions before moving anything.
+
+Finish or pause tasks that use the old copy. Save the existing owned directory outside the catalog
+and record its location. Move the complete staged copy to the same project destination. Verify its
+file list and digests, check the path in a fresh catalog, and record the new receipt. Resume paused
+work in a fresh session.
+
+If interrupted, inspect both the destination and staged copies before retrying. If the destination
+is empty, restore the saved prior directory. To roll back an activated update, finish or pause its
+tasks, preserve the current copy outside the catalog, and restore the prior directory. Verify the
+restored digests and fresh catalog path. For removal, take only the owned package out of the catalog
+and check that a fresh session no longer offers that path.
+
+## Rehearse the lifecycle
+
+From a Zoo Git clone, run the [disposable App Server check](../evals/check-local-skill.py) with two
+full commit IDs and the selected skill. This check requires Python and the Codex CLI.
 
 ```sh
 python3 evals/check-local-skill.py <prior-full-commit> <candidate-full-commit> --skill zoo-ui-craft
 ```
 
-It records paths, the complete manifest and whether package bytes differ. For a new package with no
-prior version, the same commit may be used twice to rehearse replacement/recovery mechanics. That is
-not evidence of a different-version upgrade. Run the actual prior-to-candidate check when both exist.
+The check records the package manifest, catalog paths, collisions, interrupted activation, update,
+rollback, removal, and whether the package bytes differ. Passing the same commit twice rehearses
+same-version replacement. To verify model loading, record the selection and entrypoint read in the
+session where you use it.

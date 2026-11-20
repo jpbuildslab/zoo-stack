@@ -1,22 +1,30 @@
 # Zoo
 
-I want agents to understand a repo before they change it. Read the code, follow the product's rules,
-and check the path someone will actually use.
+Zoo is a set of skills for building and maintaining software with Codex.
 
-Zoo puts that approach into five skills. Use it to investigate a problem, plan a change, build an
-approved slice, review the result, or pick up work another session left behind. Your repository keeps
-its own API rules, design system and verification commands.
+I want agents to understand the code they change and explain how they checked the result. Your
+repo's API rules, components and design references should inform the work.
 
-## Start here
+Start with `$zoo` for everyday tasks. Add a focused skill when you want help with API behavior,
+UI work, a larger change or verification in a running app.
 
-Clone the alpha release alongside the project you want to work on:
+## Get started
+
+This quickstart is for Codex CLI on macOS. You need Codex and Git. Zoo's instructions don't require
+Python, Node or Docker to read. Your project's checks may have their own requirements.
+
+**1. Start in your existing project.** Replace the path below with its root directory. The clone goes
+in a sibling directory.
 
 ```sh
-git clone --branch v0.1.0-alpha.1 --depth 1 https://github.com/jpbuildslab/zoo-stack.git
+cd /path/to/your-project &&
+git clone --branch v0.1.0-alpha.1 --depth 1 https://github.com/jpbuildslab/zoo-stack.git ../zoo-stack
 ```
 
-The verified project-local discovery path is Codex CLI and App Server on macOS. From your project's
-root, install the general entrypoint:
+If that clone already exists or the command fails, follow the
+[existing clone or archive route](docs/local-skill.md#install-from-an-existing-clone-or-archive).
+
+**2. Install the core skill.** Stay in your project's root and run:
 
 ```sh
 test ! -L .agents &&
@@ -27,119 +35,97 @@ test ! -L .agents/skills/zoo &&
 cp -R ../zoo-stack/skills/zoo .agents/skills/zoo
 ```
 
-This leaves an existing installation untouched. If Zoo is already there, or your clone is elsewhere,
-follow the [installation and update guide](docs/local-skill.md).
+You should now have `.agents/skills/zoo/SKILL.md`, its references and its license. Existing or linked
+destinations are left untouched. This installs `zoo` only. The other four skills are optional.
 
-Start a fresh Codex chat in your project and try one question:
+**3. Try one real question.** Open a fresh Codex CLI session in your project. Type `$` to select the
+installed `zoo` entry in your project. Then name a button, command or function you want to
+understand.
 
 ```text
-$zoo Trace how this app saves a changed record. Show me the owner of the write,
-what can fail, and how the caller recovers. Cite the source. Don't edit files.
+Trace what happens when I click Save on the customer form. Cite the code that
+saves the record, what can fail, and how the caller recovers. Use source only.
+Don't change files or run the app.
 ```
 
-You can also point a chat directly at `skills/zoo/SKILL.md` in your clone without installing it.
-Each package carries its MIT license. The four companion skills are optional. Install the ones you need from the same release and name
-them explicitly when you use them.
+Replace the example with your actual screen or entrypoint. Give its file or route if the name is
+ambiguous. A useful answer shows the relevant path through the code, with citations and a clear
+statement of what would still need a running app to verify.
 
-For a walkthrough, follow [your first task](docs/first-task.md). For versioned archives and checksum
-verification, see [downloads](docs/downloads.md).
+For one task, you can also [point Codex at the skill file directly](docs/local-skill.md#use-a-skill-without-installing-it).
+Record the [installed package](docs/local-skill.md#record-what-you-installed) if you plan to keep it.
 
-## Requirements
+## Choose a skill
 
-- Codex with local file access. The verified host is Codex CLI and App Server on macOS; see the
-  [tested versions and limits](docs/compatibility.md).
-- Git for the pinned clone and contributor checks. Reading an installed skill needs no Node or Python runtime.
-- Python 3.9+ and Node.js 24+ for repository checks and evaluations.
-- Docker and browser dependencies only for the separate runtime evaluations.
+Use `zoo` for the normal task. Install and explicitly select an optional skill when its focus helps.
+The [install guide](docs/local-skill.md) shows the source and destination for each package.
 
-The five skills can be installed separately. Companions don't install or launch other skills for you.
-Keep your model choices in your own session or repository settings.
+| When you want to… | Select | What it focuses on |
+| --- | --- | --- |
+| Understand code, plan, build, review or continue | `$zoo` | The requested outcome, current source and relevant checks |
+| Build a substantial change | `$zoo-production-loop` | Coherent steps, one writer and independent review where it matters |
+| Change an API | `$zoo-api-craft` | Permissions, request/data contracts, writes and retries |
+| Improve an existing screen | `$zoo-ui-craft` | The repo's design, clear actions, responsive behavior and recovery |
+| Verify a running workflow | `$zoo-runtime-acceptance` | Real behavior, persisted results, effects and cleanup |
 
-## The skills
+Keep small changes small. Select a companion for the task at hand. When you select several skills,
+use them in the same workflow.
 
-| Skill | What it helps you do |
-| --- | --- |
-| [zoo](skills/zoo/SKILL.md) | Choose the right approach for investigation, planning, building, review or continuation |
-| [zoo-production-loop](skills/zoo-production-loop/SKILL.md) | Keep substantial work in coherent slices with one accountable writer and focused review |
-| [zoo-api-craft](skills/zoo-api-craft/SKILL.md) | Trace permissions, resource scope, contracts, writes, retries and recovery |
-| [zoo-ui-craft](skills/zoo-ui-craft/SKILL.md) | Extend a product's accepted design while preserving its behavior, accessibility and recovery |
-| [zoo-runtime-acceptance](skills/zoo-runtime-acceptance/SKILL.md) | Check running behavior, persisted results, external effects and cleanup |
+## Give it the task
 
-A small wording fix should stay small. A payment or permission change needs deeper proof. Load the
-methods that help with the actual task, rather than putting every change through the same process.
-
-## A few ways to use it
-
-**Plan an API change**
+After selecting the relevant installed skill, use your own words:
 
 ```text
-$zoo $zoo-api-craft Plan this recovery fix against the current source.
-Name the affected contracts and the tests that would prove it. Planning only.
-```
-
-**Make an approved change**
-
-```text
-$zoo Implement the approved slice in this worktree. Preserve unrelated work,
-run the agreed checks, and report anything that remains unverified.
-```
-
-**Improve a screen**
-
-```text
-$zoo-ui-craft Compare this screen with the repo's accepted sibling.
-Find unnecessary copy, unclear actions and broken recovery. Return findings first.
-```
-
-**Review or continue**
-
-```text
-$zoo Review this diff for regressions in permissions and repeat behavior.
-Keep the candidate unchanged.
+Plan how to stop this form from submitting twice. Show the affected code and
+the test that would prove the fix. Don't implement it yet.
 ```
 
 ```text
-$zoo Compare this checkpoint with the current checkout and continue only
-what's already authorized. Preserve completed work and useful evidence.
+Fix the approved issue in this worktree and run the agreed local checks.
+Leave unrelated changes alone.
 ```
 
-## Keep product knowledge in the product
+```text
+Compare this screen with our accepted Invoice view. Find repeated text,
+unclear actions and missing recovery. Return findings first.
+```
 
-Zoo supplies the method. Your repo supplies the definitions: who can act, which record an operation
-belongs to, what an approved screen looks like, and which command proves the change works.
+```text
+Read this checkpoint, compare it with the current code, and continue the
+remaining authorized work.
+```
 
-For UI work, point to actual tokens, components and accepted examples. Keep useful state, action and
-consequence text. Remove explanations that repeat a heading or control. A cleaner screen still needs
-to tell someone when their payment or saved change is unconfirmed.
+A question stays a question. A plan stays a plan. For implementation, say which change and checks
+you authorize. See [the first-task walkthrough](docs/first-task.md) for a complete example.
 
-Use your existing instructions and a short task map. You don't need a new profile format or a second
-handbook. See the [repository guidance](docs/repository-guidance.md) and [small example](examples/repository-guidance.md).
+## Make it fit your product
 
-## What we've checked
+Keep permissions, data rules, design tokens, accepted screens and verification commands in your repo. Zoo tells the agent to find and use those definitions.
 
-This is an alpha. Local checks cover package boundaries, installation and recovery, and synthetic
-engineering tasks. Earlier core runs exercised browser and PostgreSQL workflows. The new API and UI
-companions went through a source-only exercise using two different synthetic product profiles.
-The current host evidence is from Codex CLI and App Server on macOS.
+For UI work, an example should point to a real component and show the states that matter. Preserve
+useful consequences and blocker messages. Remove text that only repeats a heading or control.
 
-Failures and limits are kept in the [results](docs/results.md), including cases that needed a repair.
-The [compatibility notes](docs/compatibility.md) distinguish observed behavior from support we haven't
-verified. Independent beta, other hosts and Desktop picker behavior still need evidence.
-The [evaluation guide](evals/README.md) lists the checks you can run and the prerequisites each needs.
+Use your existing repository instructions. You don't need a new profile format or a duplicate
+handbook. [Repository guidance](docs/repository-guidance.md) shows the connection.
 
-Skills guide the agent; they don't enforce its permissions. A planning request stays planning-only.
-Use the host's actual controls for tools, files and services, and authorize implementation separately.
+## Status and feedback
 
-## Contributing
+Zoo is an alpha. Local checks cover the packages, installation and selected synthetic tasks.
+The latest local evaluation covers dispatch acknowledgement handling and a synthetic request queue
+with browser and PostgreSQL checks.
+The [compatibility notes](docs/compatibility.md) and [results](docs/results.md) explain the limits.
+Skills guide behavior; the host controls tool and file access.
 
-Bring a concrete task, a small reproduction and the outcome you expected. Changes that make a real
-workflow clearer or catch a meaningful failure are useful. See [CONTRIBUTING.md](CONTRIBUTING.md) for
-local checks and [SECURITY.md](SECURITY.md) for private reports.
+See [downloads](docs/downloads.md) for release archives and checksums,
+[contributing](CONTRIBUTING.md) for checks and useful reports, and [security](SECURITY.md) for private issues.
 
-## Credits and license
+## Credits
 
 [PStack](https://github.com/cursor/plugins/tree/main/pstack) and
-[TStack](https://github.com/t3dotgg/tstack) helped shape Zoo's approach to reusable engineering workflows.
-Zoo's local results don't establish that it outperforms either project.
+[TStack](https://github.com/t3dotgg/tstack) informed Zoo's approach to reusable engineering workflows.
 
-[MIT](LICENSE), copyright 2026 JP. Research influences and external tooling are listed in [NOTICE](NOTICE).
+See [NOTICE](NOTICE) for research influences and external tooling.
+
+## License
+
+MIT

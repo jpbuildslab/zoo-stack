@@ -23,3 +23,6 @@ For an interactive session, run `npm run build` and `npm start`. Open the displa
 Each run creates a uniquely named and labeled container with a randomly assigned loopback port, temporary storage, and generated credentials. It checks container ownership before setup and checks the PostgreSQL database, user, and cluster on each new connection before making it available. The API binds to a new loopback port. The runner closes its client pool and removes only the container whose ID, name, and owner label match the run. Browser checks close their own browser, block service workers, and reject intercepted requests outside the fixture origin.
 
 If a forced stop prevents cleanup, identify the exact container using the run label `io.zoo.fixture.run` and verify its full ID and matching `zoo-fixture-*` name before removing it. Keep evaluation evidence outside the container and the candidate checkout.
+
+See [Request desk UI](UI.md) for the synthetic queue and editorial preview contracts. The preview query
+mode displays sample data. The ordinary route uses the mounted approval flow.
