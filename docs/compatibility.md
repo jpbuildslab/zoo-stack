@@ -22,7 +22,7 @@ picker, cross-host or provider observation is claimed for the suite.
 | Codex Desktop direct file references | An earlier bootstrap entrypoint, linked reference and sample were read. A fresh chat read the sample from a checkpoint. That observed Desktop session reported unrestricted filesystem access. This does not establish full-suite Desktop behavior. |
 | Codex Desktop picker | Pending explicit discovery and attachment evidence. |
 
-The [craft follow-up](results.md#craft-and-onboarding-follow-up) repeated project-local catalog
+The [craft follow-up](results.md#craft-and-onboarding-trials) repeated project-local catalog
 checks for the changed core, API, and UI packages on `0.167.0-alpha.4.1`. Matched CLI trials
 observed direct entrypoint reads and explicit composition. The owned browser observer exercised the
 synthetic queue independently of the CLI. Desktop picker attachment remains open.

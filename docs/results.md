@@ -11,6 +11,75 @@ that export, the reference typecheck and the reference frontend build passed wit
 The browser and PostgreSQL control was not rerun there because Docker and the matching browser binary
 were unavailable. The earlier mounted observations below remain historical core evidence.
 
+## Candidate first-install check
+
+The candidate skills and checkers were exercised from a clean checkout at
+`284ffe5507d8931714ed1d8f5e027138ee0a616d`. The later documentation and image changes add this report and
+selected synthetic images; they do not change the tested packages, fixtures or checkers.
+
+The README's literal clone and core-copy commands installed the published `v0.1.0-alpha.1`.
+Its named release assets passed SHA-256 verification. A fresh CLI source-only question traced
+an example save function, identified the absent persistence implementation and left files unchanged.
+
+A separate disposable project installed the exact candidate core, then the UI companion. Fresh
+App Server catalogs found the core alone and then both project-local packages. Whole-package
+manifests matched the candidate checkout. The core entrypoint is unchanged from the alpha, but its
+build/review references differ; checking the entrypoint alone would not identify the installed version.
+The UI trial explicitly selected both names and read the installed UI references. This checks CLI
+use and project-local discovery, not Desktop picker attachment.
+
+### Cedar equipment example
+
+One fresh CLI task received an unfamiliar equipment-release page, a supplied design reference,
+four repeated helper lines and a blocked release action. The first model pass changed only the
+HTML and CSS. It removed all four repeated lines while retaining uncertainty, the status-read
+instruction, the disabled release action, equipment facts and the original receipt identity.
+It made Check status the prominent action and used the reference's typography, dividers and
+left-aligned values. The script, reference and installed packages stayed unchanged.
+
+The evaluator inspected the rendered first pass at 1280 and 390 CSS pixels. Neither width overflowed.
+Reading the saved result kept the release blocked, returned the same receipt, recorded one status
+read and recorded zero writes in the client-side fixture. This is simulated UI behavior, not a
+persisted release or a live provider result. No model repair was supplied after the first pass.
+
+Before, at a 1280 × 760 viewport (full-page capture):
+
+![Synthetic Cedar equipment screen before the copy task](examples/cedar-copy-before.png)
+
+After, at the same viewport (full-page capture):
+
+![Synthetic Cedar equipment screen after the first model pass](examples/cedar-copy-after.png)
+
+**Limits and misses.** The implementer could not render its after-state within the scoped profile
+and left browser verification pending; the evaluator rendered that exact output separately.
+It also searched host application/tool metadata while looking for a browser. File canaries,
+network, sockets and process signals were denied by the preflight, but that metadata observation
+limits strict-isolation claims. A CLI launch-alias issue was resolved in the evaluation harness
+before model execution by using the nominated executable's canonical path. The first-pass output
+was not altered to obtain the illustrated result. Native devices, screen-reader speech and actual
+browser zoom were not checked.
+
+### Local evaluation and hosted coverage
+
+| Check | Observed locally |
+| --- | --- |
+| Package checks | Five packages, eight negative package controls and nine dependency-free tests passed. |
+| Dispatch API task | The starting control failed four of five independent assertions; a known corrected control and the fresh model output passed all five. |
+| Mounted Cedar desk | Chromium and owned PostgreSQL passed the full workflow, UTC calendar, compact review, Return and distant-row navigation. The read-only Approved lane also passed. |
+| Unresolved-approval control | The observer rejected the seeded regression at `reload-no-resubmit: new review is blocked`. |
+
+The mounted Cedar application was a retained synthetic artifact. Its generated source and raw
+run evidence remain outside this repository. These observations do not establish that an arbitrary
+new application will pass, or that the published alpha includes the candidate guidance.
+
+The CLI was `0.169.1` on macOS with local Node `24.15.0`. Browser checks used the pinned Playwright
+`1.65.0` image (Node `26.13.0`) and PostgreSQL image specified by the runner. Requested settings
+and observed tool events are not independent backend-model telemetry.
+
+[GitHub CI](../.github/workflows/check.yml) runs package metadata/link checks, the package controls
+and the dependency-free fixture tests. It does not run the CLI/model, browser or PostgreSQL trials
+reported here. Native picker acceptance, broader adoption and an independent beta remain open.
+
 ## Craft and onboarding trials
 
 The following observations come from maintainer-run synthetic projects. They describe the tasks
