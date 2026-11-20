@@ -18,7 +18,7 @@ in a sibling directory.
 
 ```sh
 cd /path/to/your-project &&
-git clone --branch v0.1.0-alpha.1 --depth 1 https://github.com/jpbuildslab/zoo-stack.git ../zoo-stack
+git clone --branch v0.1.0-alpha.2 --depth 1 https://github.com/jpbuildslab/zoo-stack.git ../zoo-stack
 ```
 
 If that clone already exists or the command fails, follow the
